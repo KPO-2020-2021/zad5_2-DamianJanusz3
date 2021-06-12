@@ -48,7 +48,8 @@ set(SOURCES          # All .cpp files in src/
     src/surface.cpp
     src/ridge.cpp
     src/obstacles.cpp
-    #src/flat.cpp
+    src/flat.cpp
+    src/peak.cpp
 )
 set(TESTFILES        # All .cpp files in tests/
     tests/main.cpp

@@ -11,7 +11,8 @@
 #include "vector3D.hh"
 //#include "solid.hh"
 #include "ridge.hh"
-//#include "flat.hh"
+#include "flat.hh"
+#include "peak.hh"
 #include "../inc/lacze_do_gnuplota.hh"
 
 
@@ -24,12 +25,15 @@ class Obstacles {
 
     int nr;
     PzG::LaczeDoGNUPlota  &Lacze;
+    int nextr=0, nextf=0, nextp=0;
     //Ridge ridgemount;
     //Flat flatmount;
 
 public:
 Obstacles ();
-    Obstacles(int nr, PzG::LaczeDoGNUPlota  &Lacze,Vector3D dimensions, Vector3D position);
+    Obstacles(int nr,int next, PzG::LaczeDoGNUPlota  &Lacze,Vector3D dimensions, Vector3D position);
 
    // void save();
+  //void nextp1();
+  //void makepeak(int nr,PzG::LaczeDoGNUPlota  &Lacze, Vector3D position,double x,double y,double z,std::string name);
 };

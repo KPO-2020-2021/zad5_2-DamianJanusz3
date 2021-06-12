@@ -3,9 +3,9 @@
 
 /*!
  * \file
- * \brief Definicja klasy Flat
+ * \brief Definicja klasy Peak
  * 
- * Plik zawiera definicję klasy Flat 
+ * Plik zawiera definicję klasy Peak 
  */
 
 
@@ -13,12 +13,13 @@
 #include "obstacles.hh"
 
 /*!
- * Flat dziedziczy po klasie Solid
+ * Peak dziedziczy po klasie Solid
  */
-class Flat: public Solid {
+class Peak: public Solid {
 
 protected:
 Vector3D bmid;
+
 
    
 public:
@@ -26,7 +27,7 @@ public:
 /*! 
 * Konstruktor parametryczny klasy Cuboid
 */
-Flat(Vector3D mid=Vector3D(), double x=100, double y=100, double z=20, std::string name="../datasets/flat.dat");           
+Peak(Vector3D mid=Vector3D(), double x=100, double y=100, double z=20, std::string name="../datasets/peak.dat");           
 /*! 
 * Destruktor bezparametryczny klasy Cuboid
 */
@@ -35,5 +36,7 @@ Flat(Vector3D mid=Vector3D(), double x=100, double y=100, double z=20, std::stri
 void setbmid (Vector3D bmid);
 
 Vector3D getbmid() const;
+
+ 
 
 };

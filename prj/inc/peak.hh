@@ -10,7 +10,7 @@
 
 
 #include "solid.hh"
-#include "obstacles.hh"
+//#include "obstacles.hh"
 
 /*!
  * Peak dziedziczy po klasie Solid
@@ -19,7 +19,7 @@ class Peak: public Solid {
 
 protected:
 Vector3D bmid;
-
+std::string type="Góra ze szczytem";
 
    
 public:
@@ -37,6 +37,6 @@ void setbmid (Vector3D bmid);
 
 Vector3D getbmid() const;
 
- 
+std::string gettype() {return type;}
 
 };

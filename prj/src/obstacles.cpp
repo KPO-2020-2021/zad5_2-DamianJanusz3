@@ -16,7 +16,8 @@ if (nr==1) {
   Ridge rid(position,x,y,z,name);
 rid.setname("../datasets/rmountain"+std::to_string(nr)+std::to_string(next)+".dat");
 Lacze.DodajNazwePliku(rid.getname().c_str(), PzG::RR_Ciagly, 2);
-rid.move(position);
+//rid.move(position);
+this->rid2=rid;
 rid.save();
 //this->nextr++;
 }
@@ -27,7 +28,8 @@ else if(nr==2) {
 Flat fla(position,x,y,z,name);
 fla.setname("../datasets/fmountain"+std::to_string(nr)+std::to_string(next)+".dat");
 Lacze.DodajNazwePliku(fla.getname().c_str(), PzG::RR_Ciagly, 2);
-fla.move(position);
+//fla.move(position);
+this->fla2=fla;
 fla.save();
 //this->nextf++;
 }
@@ -36,7 +38,8 @@ else if(nr==3) {
 Peak pea(position,x,y,z,name);
 pea.setname("../datasets/pmountain"+std::to_string(nr)+std::to_string(next)+".dat");
 Lacze.DodajNazwePliku(pea.getname().c_str(), PzG::RR_Ciagly, 2);
-pea.move(position);
+//pea.move(position);
+this->pea2=pea;
 pea.save();
 //makepeak(nr,Lacze,position,x,y,z,name);
 //nextp1();
@@ -49,22 +52,58 @@ else{std::cout<<"_______________"<<std::endl;}
 //std::cout<<nextp<<std::endl;
 }
 
-
-/*void Obstacles::makepeak(int nr,PzG::LaczeDoGNUPlota  &Lacze, Vector3D position,double x,double y,double z,std::string name) {
-  Peak pea(position,x,y,z,name);
-pea.setname("../datasets/pmountain"+std::to_string(nr)+std::to_string(0)+".dat");
-Lacze.DodajNazwePliku(pea.getname().c_str(), PzG::RR_Ciagly, 2);
-pea.move(position);
-pea.save();
-
-nextp1();
+Vector3D Obstacles::getmid() {
+if (this->nr==1) {
+  
+  return rid2.getmid();
+  }
+else if (this->nr==2) {
+  
+  return fla2.getmid();
+  }
+else if (this->nr==3) {
+  
+  return pea2.getmid();
+  }
+else {
+  std::cerr<<"nie ma takiej figury!"<<std::endl;
+  Vector3D b; return b;}
 }
 
 
+std::string Obstacles::gettype() {
+  if (this->nr==1) {
+  
+  return rid2.gettype();
+  }
+else if (this->nr==2) {
+  
+  return fla2.gettype();
+  }
+else if (this->nr==3) {
+  
+  return pea2.gettype();
+  }
+else {std::string b="nie ma takiej figury?"; return b;}
+}
 
-void Obstacles::nextp1(){
-  this->nextp+=1;
-}*/
+
+std::string Obstacles::getname() {
+  if (this->nr==1) {
+  
+  return rid2.getname();
+  }
+else if (this->nr==2) {
+  
+  return fla2.getname();
+  }
+else if (this->nr==3) {
+  
+  return pea2.getname();
+  }
+else {std::string b="nie ma takiej figury?"; return b;}
+}
+
 /*! 
 * Metoda odpowiedzialna za zapis wierzchołków    
 * \param[in]  - brak, 

@@ -33,6 +33,7 @@ PzG::LaczeDoGNUPlota Lacze;
 Drone *tab[NR];
 Surface *ground;
 std::list<std::shared_ptr<Obstacles>> Lst;
+std::list<std::shared_ptr<Obstacles>>::iterator iter = Lst.begin();
 //Obstacles *mounttab[20];
 
 public:
@@ -53,5 +54,5 @@ void draw();
 */
 void interface();
 
-
+void deletename ( PzG::LaczeDoGNUPlota  &Lacze);
 };

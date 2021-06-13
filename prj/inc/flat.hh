@@ -10,7 +10,7 @@
 
 
 #include "solid.hh"
-#include "obstacles.hh"
+//#include "obstacles.hh"
 
 /*!
  * Flat dziedziczy po klasie Solid
@@ -19,7 +19,7 @@ class Flat: public Solid {
 
 protected:
 Vector3D bmid;
-
+std::string type="Płaskowyż";
    
 public:
 
@@ -35,5 +35,7 @@ Flat(Vector3D mid=Vector3D(), double x=100, double y=100, double z=20, std::stri
 void setbmid (Vector3D bmid);
 
 Vector3D getbmid() const;
+
+std::string gettype() {return type;}
 
 };

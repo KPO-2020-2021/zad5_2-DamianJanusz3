@@ -17,7 +17,7 @@
 /*!
  * Drone zawiera: kąt, id, odległość do przebycia, macierz rotacji
  * oryginalne rotory, ich kopie, oryginalny kadłub, jego kopię,
- *łącze do gnu plota i rysowaną scieżkę.
+ *łącze do gnu plota i rysowaną scieżkę. 
  */
 class Drone {
 

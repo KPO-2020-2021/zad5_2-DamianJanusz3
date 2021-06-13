@@ -29,11 +29,11 @@ ground->save();
 //double place[3]{(double)(rand()%510-200),50/*(double)(rand()%510-200)*/,50};
 //double place2[3]{(double)(rand()%510-200),-50/*(double)(rand()%510-200)*/,50};
 //Vector3D a(place2); 
-double x=100, y=100, z=100, k=50, l=50, i=-50, j=-50, zz=40, g=-30, h=20, m=50, n=-50;//, nr=1;
-double place2[3]{k,l,z/4}; double wym2[3]{x,y,z}; 
-double place3[3]{i,j,zz/4}; double wym3[3]{x,y,zz};
-double place4[3]{g,h,zz/4}; double wym4[3]{x,y,zz};
-double place5[3]{m,n,z/4}; double wym5[3]{x,y,z}; 
+double x=100, y=100, z=100, k=50, l=50, i=-150, j=-250, zz=40, g=-300, h=200, m=50, n=-250;//, nr=1;
+double place2[3]{k,l,z/2}; double wym2[3]{x,y,z}; 
+double place3[3]{i,j,zz/2}; double wym3[3]{x,y,zz};
+double place4[3]{g,h,zz/2}; double wym4[3]{x,y,zz};
+double place5[3]{m,n,z/2}; double wym5[3]{x,y,z}; 
 Vector3D a(place2);Vector3D d(wym2);
 Vector3D a2(place3); Vector3D d2(wym3);
 Vector3D a3(place4); Vector3D d3(wym4);
@@ -86,10 +86,11 @@ std::cout<<"m - wyswietl menu"<<std::endl<<std::endl;
 std::cout<<"k - koniec dzialania programu"<<std::endl<<std::endl;
 
     char action;
-    int r=0,num=0, nextr=1,nextf=1,nextp=2;
+    int r=0,num=0, nextr=1,nextf=1,nextp=2, n=1, m=0;
     double x, y;
     Vector3D dimens;  
     Vector3D a;
+    Vector3D midd;
     
     do {
     
@@ -130,7 +131,7 @@ std::cout<<"k - koniec dzialania programu"<<std::endl<<std::endl;
         std::cout<<std::endl<<std::endl<<"Podaj wspolrzedne srodka podstawy x,y."<<std::endl;
         std::cout<<"Wprowadz wspolrzedne: x y>  ";
         std::cin>>x; std::cin>>y;
-        a[0]=x; a[1]=y; a[2]=dimens[2]/4;
+        a[0]=x; a[1]=y; a[2]=dimens[2]/2;
         
 
         
@@ -140,6 +141,33 @@ std::cout<<"k - koniec dzialania programu"<<std::endl<<std::endl;
         else {std::cerr<<"Nie ma bryły o takim numerze"<<std::endl;}
 
         break;
+
+
+        case 'u':
+        std::cout<<"Wybierz element powierzchni do usuniecia:"<<std::endl;
+        //for (std::list<std::shared_ptr<Obstacles>>::iterator i=Lst.begin(); i!=Lst.end(); i++) {
+        for (std::shared_ptr<Obstacles> &ob : Lst) {
+            midd=ob->getmid();
+            std::cout<<n<<" - ("<<midd[0]<<" "<<midd[1]<<") "<<ob->gettype()<<std::endl;
+            ++n;
+        }
+        iter = Lst.begin();
+        std::cout<<"Podaj numer elementu> ";
+        std::cin>>m;
+        std::cout<<"_________________"<<n<<std::endl;
+        if (m<n && m>0) {
+            std::cout<<"_________________"<<m<<std::endl;
+            advance(iter, m-1);
+            Lst.erase(iter);
+        }
+        else {std::cerr<<"nie ma przeszkody o tym numerze"<<std::endl;}
+        deletename (Lacze);
+        iter = Lst.begin();
+        n=1;
+
+
+        break;
+
 
 
         case 'm':
@@ -176,4 +204,29 @@ for(int i=0; i<NR; i++)
 free (tab[i]);
 //for(int j=0; j<2; j++)
 //free (mounttab[j]);
+ }
+
+ void Scene::deletename ( PzG::LaczeDoGNUPlota  &Lacze) {
+     Lacze.UsunWszystkieNazwyPlikow();
+//dla 2 dronów ustawione na stałe
+     Lacze.DodajNazwePliku("../datasets/body0.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/body1.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/rotor00.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/rotor01.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/rotor02.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/rotor03.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/rotor10.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/rotor11.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/rotor12.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/rotor13.dat", PzG::RR_Ciagly, 2);
+//dla innych elementów
+     Lacze.DodajNazwePliku("../datasets/path.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/surface.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/cuboid.dat", PzG::RR_Ciagly, 2);
+     Lacze.DodajNazwePliku("../datasets/prism.dat", PzG::RR_Ciagly, 2);
+//dla pozostałych przeszkód
+     for (std::shared_ptr<Obstacles> &ob2 : Lst) {
+         Lacze.DodajNazwePliku(ob2->getname().c_str(), PzG::RR_Ciagly, 2);
+     }
+
  }

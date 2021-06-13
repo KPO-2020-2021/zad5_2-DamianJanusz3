@@ -23,7 +23,7 @@ org.setname("../datasets/body"+std::to_string(id)+".dat");
  for (int i = 0; i < 4; ++i)
     orgw[i].setname("../datasets/rotor" + std::to_string(id) + std::to_string(i) + ".dat");
 
-Lacze.DodajNazwePliku(org.getname().c_str(), PzG::RR_Ciagly, 2);
+Lacze.DodajNazwePliku(org.getname().c_str(), PzG::RR_Ciagly, 2); 
 for (int j = 0; j < 4; ++j)
 Lacze.DodajNazwePliku(orgw[j].getname().c_str(),PzG::RR_Ciagly,2);
 cpy=org;

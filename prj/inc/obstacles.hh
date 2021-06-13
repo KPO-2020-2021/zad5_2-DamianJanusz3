@@ -26,8 +26,10 @@ class Obstacles {
     int nr;
     PzG::LaczeDoGNUPlota  &Lacze;
     int nextr=0, nextf=0, nextp=0;
-    //Ridge ridgemount;
-    //Flat flatmount;
+    Flat fla2;
+    Ridge rid2;
+    Peak pea2;
+    
 
 public:
 Obstacles ();
@@ -36,4 +38,7 @@ Obstacles ();
    // void save();
   //void nextp1();
   //void makepeak(int nr,PzG::LaczeDoGNUPlota  &Lacze, Vector3D position,double x,double y,double z,std::string name);
+  Vector3D getmid();
+  std::string gettype();
+  std::string getname();
 };

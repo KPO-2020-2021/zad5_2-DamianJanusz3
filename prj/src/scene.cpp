@@ -48,10 +48,15 @@ Lst.push_back(std::make_shared<Obstacles>(2,0,Lacze,d2,a2));
 Lst.push_back(std::make_shared<Obstacles>(3,0,Lacze,d3,a3));
 Lst.push_back(std::make_shared<Obstacles>(3,1,Lacze,d4,a4));
 ///////////////////
-for (int i=0; i<NR; ++i){
+//for (int i=0; i<NR; ++i){
 double position[3]{(double)(rand()%510-200),(double)(rand()%510-200),30};
-tab[i]=new Drone (i,Lacze,Vector3D(position));
-tab[i]->save();
+double position2[3]{(double)(rand()%510-200),(double)(rand()%510-200),30};
+//tab[i]=new Drone (i,Lacze,Vector3D(position));
+DLst.push_back(std::make_shared<Drone>(0,Lacze,Vector3D(position)));
+DLst.push_back(std::make_shared<Drone>(1,Lacze,Vector3D(position2)));
+for (std::shared_ptr<Drone> &obd : DLst) {
+    obd->save();
+//tab[i]->save();
 }
 Lacze.Rysuj(); 
 }
@@ -115,7 +120,12 @@ std::cout<<"k - koniec dzialania programu"<<std::endl<<std::endl;
         break;
 
         case 'p':
-        tab[r]->manipulate();
+        
+
+        if (r==0) {it=DLst.begin(); it->get()->manipulate();}
+        else if (r==1) {  (++it)->get()->manipulate(); it=DLst.begin();}
+        else {std::cerr<<"brak drona o podanym numerze."<<std::endl; r=0;}
+        //tab[r]->manipulate();
         break;
 
         case 'd':
@@ -200,8 +210,8 @@ std::cout<<"k - koniec dzialania programu"<<std::endl<<std::endl;
 Scene::~Scene()
  {
 free (ground);
-for(int i=0; i<NR; i++)
-free (tab[i]);
+//for(int i=0; i<NR; i++)
+//free (tab[i]);
 //for(int j=0; j<2; j++)
 //free (mounttab[j]);
  }

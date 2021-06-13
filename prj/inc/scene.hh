@@ -30,7 +30,9 @@
 class Scene {
 
 PzG::LaczeDoGNUPlota Lacze;
-Drone *tab[NR];
+//Drone *tab[NR];
+std::list<std::shared_ptr<Drone>> DLst;
+std::list<std::shared_ptr<Drone>>::iterator it = DLst.begin();
 Surface *ground;
 std::list<std::shared_ptr<Obstacles>> Lst;
 std::list<std::shared_ptr<Obstacles>>::iterator iter = Lst.begin();

@@ -36,6 +36,7 @@ var hierarchy =
       [ "doctest::detail::MessageBuilder", "structdoctest_1_1detail_1_1_message_builder.html", null ]
     ] ],
     [ "doctest::mpi_sub_comm", "structdoctest_1_1mpi__sub__comm.html", null ],
+    [ "Obstacles", "class_obstacles.html", null ],
     [ "doctest::QueryData", "structdoctest_1_1_query_data.html", null ],
     [ "doctest::detail::RelationalComparator< int, L, R >", "structdoctest_1_1detail_1_1_relational_comparator.html", null ],
     [ "doctest::detail::remove_const< T >", "structdoctest_1_1detail_1_1remove__const.html", null ],
@@ -47,7 +48,10 @@ var hierarchy =
     [ "Scene", "class_scene.html", null ],
     [ "Solid", "class_solid.html", [
       [ "Cuboid", "class_cuboid.html", null ],
-      [ "Prism", "class_prism.html", null ]
+      [ "Flat", "class_flat.html", null ],
+      [ "Peak", "class_peak.html", null ],
+      [ "Prism", "class_prism.html", null ],
+      [ "Ridge", "class_ridge.html", null ]
     ] ],
     [ "doctest::String", "classdoctest_1_1_string.html", null ],
     [ "doctest::StringMaker< R C::* >", "structdoctest_1_1_string_maker_3_01_r_01_c_1_1_5_01_4.html", null ],

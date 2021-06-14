@@ -18,7 +18,7 @@
 Cuboid::Cuboid(Vector3D mid, double x, double y, double z, std::string name) {
 
 double tab[]={x,y,z};
-dimen=/*new*/ Vector3D(tab);
+dimen= Vector3D(tab);
    this->name=name;
     this->mid=mid;
    Vector3D vertex;

@@ -28,6 +28,10 @@ var files_dup =
       [ "Dummy", "class_dummy.html", "class_dummy" ]
     ] ],
     [ "exampleConfig.h", "example_config_8h.html", "example_config_8h" ],
+    [ "flat.cpp", "flat_8cpp.html", null ],
+    [ "flat.hh", "flat_8hh.html", [
+      [ "Flat", "class_flat.html", "class_flat" ]
+    ] ],
     [ "foo.cpp", "foo_8cpp.html", "foo_8cpp" ],
     [ "lacze_do_gnuplota.cpp", "lacze__do__gnuplota_8cpp.html", "lacze__do__gnuplota_8cpp" ],
     [ "lacze_do_gnuplota.hh", "lacze__do__gnuplota_8hh.html", "lacze__do__gnuplota_8hh" ],
@@ -38,22 +42,31 @@ var files_dup =
     [ "matrix.hh", "matrix_8hh.html", "matrix_8hh" ],
     [ "matrix3x3.hh", "matrix3x3_8hh.html", "matrix3x3_8hh" ],
     [ "mpi_reporter.h", "mpi__reporter_8h.html", "mpi__reporter_8h" ],
-    [ "src/prism.cpp", "src_2prism_8cpp.html", null ],
-    [ "tests/prism.cpp", "tests_2prism_8cpp.html", null ],
+    [ "obstacles.cpp", "obstacles_8cpp.html", null ],
+    [ "obstacles.hh", "obstacles_8hh.html", [
+      [ "Obstacles", "class_obstacles.html", "class_obstacles" ]
+    ] ],
+    [ "peak.cpp", "peak_8cpp.html", null ],
+    [ "peak.hh", "peak_8hh.html", [
+      [ "Peak", "class_peak.html", "class_peak" ]
+    ] ],
+    [ "prism.cpp", "prism_8cpp.html", null ],
     [ "prism.hh", "prism_8hh.html", [
       [ "Prism", "class_prism.html", "class_prism" ]
     ] ],
-    [ "src/scene.cpp", "src_2scene_8cpp.html", null ],
-    [ "tests/scene.cpp", "tests_2scene_8cpp.html", null ],
+    [ "src/ridge.cpp", "src_2ridge_8cpp.html", null ],
+    [ "tests/ridge.cpp", "tests_2ridge_8cpp.html", "tests_2ridge_8cpp" ],
+    [ "ridge.hh", "ridge_8hh.html", [
+      [ "Ridge", "class_ridge.html", "class_ridge" ]
+    ] ],
+    [ "scene.cpp", "scene_8cpp.html", null ],
     [ "scene.hh", "scene_8hh.html", "scene_8hh" ],
-    [ "size.hh", "size_8hh.html", "size_8hh" ],
-    [ "src/solid.cpp", "src_2solid_8cpp.html", null ],
-    [ "tests/solid.cpp", "tests_2solid_8cpp.html", "tests_2solid_8cpp" ],
+    [ "solid.cpp", "solid_8cpp.html", null ],
     [ "solid.hh", "solid_8hh.html", [
       [ "Solid", "class_solid.html", "class_solid" ]
     ] ],
     [ "src/surface.cpp", "src_2surface_8cpp.html", null ],
-    [ "tests/surface.cpp", "tests_2surface_8cpp.html", null ],
+    [ "tests/surface.cpp", "tests_2surface_8cpp.html", "tests_2surface_8cpp" ],
     [ "surface.hh", "surface_8hh.html", [
       [ "Surface", "class_surface.html", "class_surface" ]
     ] ],

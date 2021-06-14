@@ -23,10 +23,7 @@ public:
 * Konstruktor parametryczny klasy Cuboid
 */
 Cuboid(Vector3D mid=Vector3D(), double x=60, double y=60, double z=60, std::string name="../datasets/cuboid.dat");           
-/*! 
-* Destruktor bezparametryczny klasy Cuboid
-*/
-//~Cuboid() {free (dimen);};
+
 
 };
 

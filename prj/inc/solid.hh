@@ -45,7 +45,7 @@ Vector3D operator[](int index)const;
 */
 void setmid (Vector3D mid);
 /*! 
-* Metoda odpowiedzialna za usatwienie nazwy
+* Metoda odpowiedzialna za ustawienie nazwy
 */
 void setname (std::string name);
 /*! 

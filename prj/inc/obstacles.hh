@@ -2,9 +2,9 @@
 
 /*!
  * \file
- * \brief Definicja klasy Drone
+ * \brief Definicja klasy Obstacles
  * 
- * Plik zawiera definicję klasy Drone
+ * Plik zawiera definicję klasy Obstacles
  */
 
 #include "matrix3x3.hh"
@@ -17,11 +17,10 @@
 
 
 /*!
- * Drone zawiera: kąt, id, odległość do przebycia, macierz rotacji
- * oryginalne rotory, ich kopie, oryginalny kadłub, jego kopię,
- *łącze do gnu plota i rysowaną scieżkę.
+ * Obstacles zawiera: numer obiektu, łącze do gnuplota, 3 liczniki dla poszczególnych
+ * przeszkód, 3 zmienne reprezentujące różne typy przeszkód
  */
-class Obstacles {
+class Obstacles { 
 
     int nr;
     PzG::LaczeDoGNUPlota  &Lacze;
@@ -32,13 +31,25 @@ class Obstacles {
     
 
 public:
+/*! 
+* Konstruktor bezparametryczny klasy Obstacles
+*/
 Obstacles ();
-    Obstacles(int nr,int next, PzG::LaczeDoGNUPlota  &Lacze,Vector3D dimensions, Vector3D position);
+/*! 
+* Konstruktor parametryczny klasy Obstacles
+*/
+Obstacles(int nr,int next, PzG::LaczeDoGNUPlota  &Lacze,Vector3D dimensions, Vector3D position);
 
-   // void save();
-  //void nextp1();
-  //void makepeak(int nr,PzG::LaczeDoGNUPlota  &Lacze, Vector3D position,double x,double y,double z,std::string name);
+/*! 
+* Metoda dostępowa, zwraca środek 
+*/
   Vector3D getmid();
+/*! 
+* Metoda dostępowa, zwraca typ
+*/
   std::string gettype();
+/*! 
+* Metoda dostępowa, zwraca nazwę
+*/
   std::string getname();
 };

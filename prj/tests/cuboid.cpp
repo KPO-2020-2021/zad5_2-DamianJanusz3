@@ -7,7 +7,7 @@ TEST_CASE("metody setname i getname")
 {
   double tab[3]={25,25,25};
   Vector3D mid(tab); 
-  Cuboid f(mid,60,60,60,"../datasets/cuboid.dat");
+  Cuboid f(mid,60,60,60,"../datasets/cuboid.dat"); 
   std::string n="name1";
   f.setname(n);
 

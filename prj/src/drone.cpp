@@ -11,8 +11,7 @@
 * \param[in]  - id -numer drona,   
 * \param[in]  - Lacze -łącze do gnoplota,  
 * \param[in]  - position -wektor określający położenie drona,             
-* Ustawia zakresy rysowania, tworzy płaszczyznę,
-* losuje pozycje dla dronów i je roztawia  
+* Ustawia nazwy plików, dodaje je do gnuplota  
 */
 Drone::Drone(int id,PzG::LaczeDoGNUPlota  &Lacze,Vector3D position):Lacze(Lacze){
 

@@ -18,8 +18,5 @@ class Prism: public Solid {
 * Konstruktor parametryczny klasy Prism
 */
 Prism (Vector3D mid=Vector3D(),double z=10, double radius=25,std::string name= "../datasets/prism.dat");
-/*! 
-* Destruktor bezparametryczny klasy Surface
-*/
-// ~Prism(){free (dimen);}
+
 };

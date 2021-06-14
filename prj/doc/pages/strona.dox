@@ -1,10 +1,10 @@
 /*!
-   \mainpage  Dragonfly faza 1
+   \mainpage  Dragonfly faza 2
 
 
 	\author  Damian Janusz
-   \date    05.06.2021
-   \version 1.0
+   \date    14.06.2021
+   \version 2.0
 
    Aplikacja ma za zadanie symulować przelot drona.
 
@@ -12,7 +12,7 @@
 
    Umożliwia przelot wybranym z dwóch dronów, na zadaną odległość. Między dronami nie ma kolizji.
    Dron najpierw unosi sie, potem obraza w dobrym kierunku inastępnie leci na zadaną odległość i
-   tam ląduje.
+   tam ląduje. Na powierzchnipojawiły się przeszkody. można dodawać ich więcej lub je usuwać. Między dronem a przeszkodą brak kolizji.
 
   
 

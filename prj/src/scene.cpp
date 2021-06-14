@@ -10,7 +10,7 @@
 * Konstruktor bezparametryczny klasy Scene. 
 * \param[in]  - brak,                
 * Ustawia zakresy rysowania, tworzy płaszczyznę,
-* losuje pozycje dla dronów i je roztawia  
+* losuje pozycje dla dronów i je roztawia, rozstawia pierwsze 4 przeszkody
 */
 Scene::Scene(){
 
@@ -26,9 +26,6 @@ ground=new Surface(dimground,30);
 Lacze.DodajNazwePliku(ground->getname().c_str(),PzG::RR_Ciagly, 2);
 ground->save();
 /////////////////
-//double place[3]{(double)(rand()%510-200),50/*(double)(rand()%510-200)*/,50};
-//double place2[3]{(double)(rand()%510-200),-50/*(double)(rand()%510-200)*/,50};
-//Vector3D a(place2); 
 double x=100, y=100, z=100, k=50, l=50, i=-150, j=-250, zz=40, g=-300, h=200, m=50, n=-250;//, nr=1;
 double place2[3]{k,l,z/2}; double wym2[3]{x,y,z}; 
 double place3[3]{i,j,zz/2}; double wym3[3]{x,y,zz};
@@ -38,25 +35,19 @@ Vector3D a(place2);Vector3D d(wym2);
 Vector3D a2(place3); Vector3D d2(wym3);
 Vector3D a3(place4); Vector3D d3(wym4);
 Vector3D a4(place5); Vector3D d4(wym5);
-//std::string name="../datasets/ridge.dat";
-//mounttab[0]=new Obstacles(1,Lacze,Vector3D(place));
-//mounttab[1]=new Obstacles(2,Lacze,Vector3D(place2));
-//for (int i=0; i<2; ++i)
-//mounttab[i]->save();
+
 Lst.push_back(std::make_shared<Obstacles>(1,0,Lacze,d,a));
 Lst.push_back(std::make_shared<Obstacles>(2,0,Lacze,d2,a2));
 Lst.push_back(std::make_shared<Obstacles>(3,0,Lacze,d3,a3));
 Lst.push_back(std::make_shared<Obstacles>(3,1,Lacze,d4,a4));
 ///////////////////
-//for (int i=0; i<NR; ++i){
+
 double position[3]{(double)(rand()%510-200),(double)(rand()%510-200),30};
 double position2[3]{(double)(rand()%510-200),(double)(rand()%510-200),30};
-//tab[i]=new Drone (i,Lacze,Vector3D(position));
 DLst.push_back(std::make_shared<Drone>(0,Lacze,Vector3D(position)));
 DLst.push_back(std::make_shared<Drone>(1,Lacze,Vector3D(position2)));
 for (std::shared_ptr<Drone> &obd : DLst) {
     obd->save();
-//tab[i]->save();
 }
 Lacze.Rysuj(); 
 }
@@ -125,7 +116,7 @@ std::cout<<"k - koniec dzialania programu"<<std::endl<<std::endl;
         if (r==0) {it=DLst.begin(); it->get()->manipulate();}
         else if (r==1) {  (++it)->get()->manipulate(); it=DLst.begin();}
         else {std::cerr<<"brak drona o podanym numerze."<<std::endl; r=0;}
-        //tab[r]->manipulate();
+        
         break;
 
         case 'd':
@@ -155,7 +146,7 @@ std::cout<<"k - koniec dzialania programu"<<std::endl<<std::endl;
 
         case 'u':
         std::cout<<"Wybierz element powierzchni do usuniecia:"<<std::endl;
-        //for (std::list<std::shared_ptr<Obstacles>>::iterator i=Lst.begin(); i!=Lst.end(); i++) {
+        
         for (std::shared_ptr<Obstacles> &ob : Lst) {
             midd=ob->getmid();
             std::cout<<n<<" - ("<<midd[0]<<" "<<midd[1]<<") "<<ob->gettype()<<std::endl;
@@ -164,9 +155,9 @@ std::cout<<"k - koniec dzialania programu"<<std::endl<<std::endl;
         iter = Lst.begin();
         std::cout<<"Podaj numer elementu> ";
         std::cin>>m;
-        std::cout<<"_________________"<<n<<std::endl;
+        
         if (m<n && m>0) {
-            std::cout<<"_________________"<<m<<std::endl;
+            
             advance(iter, m-1);
             Lst.erase(iter);
         }
@@ -210,12 +201,15 @@ std::cout<<"k - koniec dzialania programu"<<std::endl<<std::endl;
 Scene::~Scene()
  {
 free (ground);
-//for(int i=0; i<NR; i++)
-//free (tab[i]);
-//for(int j=0; j<2; j++)
-//free (mounttab[j]);
+
  }
 
+
+/*! 
+* Metoda odpowiedzialna za usuwanie nazwy pliku z gnuplota   
+* \param[in]  - Lacze - łącze do gnuplota,                                              
+* Usuwa wszystkie nazwy a następnie dodaje od początku wszystkie oprócz tej którą usunięto
+*/
  void Scene::deletename ( PzG::LaczeDoGNUPlota  &Lacze) {
      Lacze.UsunWszystkieNazwyPlikow();
 //dla 2 dronów ustawione na stałe

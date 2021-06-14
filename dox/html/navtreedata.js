@@ -22,21 +22,21 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
-    [ "Dragonfly faza 1", "index.html", [
+  [ "Dragonfly faza2", "index.html", [
+    [ "Dragonfly faza 2", "index.html", [
       [ "Najważniejsze cechy", "index.html#wazne-cechy", null ]
     ] ],
     [ "Diagram klas", "strona-diagramu-klas.html", null ],
-    [ "README", "md__home_lapidary_zad5_1-_damian_janusz3_prj_tests_bin_queue_8pyi_models_piston_rod_part_ariac__r_e_a_d_m_e.html", null ],
-    [ "Gazebo Experiment Rooms", "md__home_lapidary_zad5_1-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html", [
-      [ "Test Example", "md__home_lapidary_zad5_1-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html#autotoc_md1", [
-        [ "Room1", "md__home_lapidary_zad5_1-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html#autotoc_md2", null ],
-        [ "Room2", "md__home_lapidary_zad5_1-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html#autotoc_md3", null ],
-        [ "Room3", "md__home_lapidary_zad5_1-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html#autotoc_md4", null ],
-        [ "Room4", "md__home_lapidary_zad5_1-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html#autotoc_md5", null ]
+    [ "README", "md__home_lapidary_zad5_2-_damian_janusz3_prj_tests_bin_queue_8pyi_models_piston_rod_part_ariac__r_e_a_d_m_e.html", null ],
+    [ "Gazebo Experiment Rooms", "md__home_lapidary_zad5_2-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html", [
+      [ "Test Example", "md__home_lapidary_zad5_2-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html#autotoc_md1", [
+        [ "Room1", "md__home_lapidary_zad5_2-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html#autotoc_md2", null ],
+        [ "Room2", "md__home_lapidary_zad5_2-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html#autotoc_md3", null ],
+        [ "Room3", "md__home_lapidary_zad5_2-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html#autotoc_md4", null ],
+        [ "Room4", "md__home_lapidary_zad5_2-_damian_janusz3_prj_tests_doctest_extensions_synchronize_8pyi__r_e_a_d_m_e.html#autotoc_md5", null ]
       ] ]
     ] ],
-    [ "Instrukcje oraz pomoce naukowe", "md__home_lapidary_zad5_1-_damian_janusz3_prj_tests_doctest_translation_8pyi_social-tracking-prot039fa0bb3ce1e73ff41739c432e334b0.html", null ],
+    [ "Instrukcje oraz pomoce naukowe", "md__home_lapidary_zad5_2-_damian_janusz3_prj_tests_doctest_translation_8pyi_social-tracking-prota37125000d0969ae4b7e9fc344449594.html", null ],
     [ "Przestrzenie nazw", "namespaces.html", [
       [ "Lista przestrzeni nazw", "namespaces.html", "namespaces_dup" ],
       [ "Składowe przestrzeni nazw", "namespacemembers.html", [
@@ -76,14 +76,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_8__doctest_8cpp.html",
-"classdoctest_1_1_approx.html#acf32148e34dc6444a3bb4b16e7298279",
-"doctest_8h.html#a1f910fdc13d84a538090b959a97a6fa5",
-"doctest_8h.html#aa0aa6b2f4cd2ab8cc0b5c4c6a1745e05",
-"doctest_8h.html#aec647ccc1d8d3cf3ad367cfac8ae7f38",
-"doctest__fwd_8h.html#a5937efa19ce061357efe0b8a8f5be061",
-"doctest__fwd_8h.html#ae1bb5bed722f34f1c38b83cb19d326d3a405685d69fea393e6799b8189824b468",
-"functions_m.html",
-"structdoctest_1_1_i_reporter.html#a7f4a4b654726d4b266c91cc0e1569f96"
+"classdoctest_1_1_approx.html#a12a93e1726180db4091cb2e3b8ba5e30",
+"doctest_8h.html#a0da07f59e77fcb14943788b2c85e2355",
+"doctest_8h.html#a8d2841093b4bbdb7efd276e1a35a784a",
+"doctest_8h.html#ae1bb5bed722f34f1c38b83cb19d326d3aed02321201b6add80ba71104a3351cdc",
+"doctest__fwd_8h.html#a49fd020eb5d05b1e021d84558ef297a5",
+"doctest__fwd_8h.html#add92617980cc95f31f1f00d8ec264073",
+"functions_e.html",
+"structdoctest_1_1_context_options.html#a9f26ee60a5259e73f9f25ce3f4883a97",
+"vector_8cpp.html#a2d55b6ae31c8200ea176bb0978609df8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

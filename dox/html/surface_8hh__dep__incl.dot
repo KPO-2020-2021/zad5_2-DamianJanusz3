@@ -9,9 +9,9 @@ digraph "surface.hh"
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$app_2main_8cpp.html",tooltip=" "];
   Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="scene.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src_2scene_8cpp.html",tooltip="plik źródłowy"];
-  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="scene.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tests_2scene_8cpp.html",tooltip=" "];
+  Node4 [label="scene.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$scene_8cpp.html",tooltip="plik źródłowy"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="surface.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src_2surface_8cpp.html",tooltip="plik źródłowy"];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="surface.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src_2surface_8cpp.html",tooltip="plik źródłowy"];
+  Node6 [label="surface.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tests_2surface_8cpp.html",tooltip=" "];
 }

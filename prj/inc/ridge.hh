@@ -8,35 +8,30 @@
  */
 
 
-//#include "solid.hh"
-//#include "obstacles.hh"
+
 #include "solid.hh"
 
 /*!
  * Ridge dziedziczy po klasie Solid
+ * zawiera dodatkowe pola: środek podstawy i typ.
  */
 class Ridge: public Solid{
 
 protected:
-Vector3D bmid;
+
 std::string type="Góra z granią";
 
    
 public:
 
 /*! 
-* Konstruktor parametryczny klasy Cuboid
+* Konstruktor parametryczny klasy Ridge
 */
-Ridge(Vector3D mid=Vector3D(), double x=100, double y=100, double z=100, std::string name="../datasets/ridge.dat");           
+Ridge(Vector3D mid=Vector3D(), double x=100, double y=100, double z=100, std::string name="../datasets/ridge.dat");  
+
 /*! 
-* Destruktor bezparametryczny klasy Cuboid
+* Metoda dostępowa, zwraca typ obiektu
 */
-//~Cuboid() {free (dimen);};
-
-void setbmid (Vector3D bmid);
-
-Vector3D getbmid() const;
-
 std::string gettype() {return type;}
 
 };

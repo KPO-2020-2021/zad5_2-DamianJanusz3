@@ -25,18 +25,17 @@
 #define NR 2
 
 /*!
- * Scene zawiera łącze do gnuplota, tablicę dronów i płaszczyznę.
+ * Scene zawiera łącze do gnuplota, listę dronów, listę przeszkód, ich iteratory, płaszczyznę.
  */
 class Scene {
 
 PzG::LaczeDoGNUPlota Lacze;
-//Drone *tab[NR];
 std::list<std::shared_ptr<Drone>> DLst;
 std::list<std::shared_ptr<Drone>>::iterator it = DLst.begin();
 Surface *ground;
 std::list<std::shared_ptr<Obstacles>> Lst;
 std::list<std::shared_ptr<Obstacles>>::iterator iter = Lst.begin();
-//Obstacles *mounttab[20];
+
 
 public:
 /*! 
@@ -55,6 +54,8 @@ void draw();
 * Metoda odpowiedzialna za cały interfejs
 */
 void interface();
-
+/*! 
+* Metoda odpowiedzialna za usunięcie nazwy pliku z łącza 
+*/
 void deletename ( PzG::LaczeDoGNUPlota  &Lacze);
 };

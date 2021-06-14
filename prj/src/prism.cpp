@@ -17,7 +17,7 @@
 Prism::Prism (Vector3D mid,double z, double radius,std::string name ) {
 
 double tab[]={0,0,z};
-dimen=/*new*/ Vector3D(tab);
+dimen= Vector3D(tab);
    this->name=name;
     this->mid=mid;
     Vector3D vertex;

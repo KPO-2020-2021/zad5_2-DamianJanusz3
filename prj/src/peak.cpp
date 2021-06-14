@@ -1,14 +1,29 @@
+/*!
+ * \file
+ * \brief plik źródłowy
+ * 
+ * Plik zawiera wszystkie metody klasy Peak
+ */
+
 #include "peak.hh"
 
-
+/*! 
+* Konstruktor parametryczny klasy Peak.      
+* \param[in]  - mid -środek bryły, 
+* \param[in]  - x -wspólrzędna po osi x, 
+* \param[in]  - y -wspólrzędna po osi y,
+* \param[in]  - z -wspólrzędna po osi z,
+* \param[in]  - name -nazwa,
+* wpisuje do kontenera wszystkie wierzchołki góry ze szczytem
+*/
 Peak::Peak(Vector3D mid, double x, double y, double z, std::string name) { 
 
     double tab[]={x,y,z};
-    double tab2[]={0,0,z/2};
+    
     dimen=Vector3D(tab);
-    Vector3D mov(tab2);
+    
     this->name=name;
-    this->bmid=mid-mov;
+    
     this->mid=mid;
     Vector3D vertex;
 
@@ -55,21 +70,5 @@ Peak::Peak(Vector3D mid, double x, double y, double z, std::string name) {
     
 }
 
-/*! 
-* Metoda odpowiedzialna za ustawianie środka     
-* \param[in]  - mid -srodek,                                              
-* Przypisuje odpowiedniej zmiennej z klasy, srodek podany w argumencie 
-*/
-void Peak::setbmid (Vector3D bmid){
-this->bmid=bmid;
-}
 
-/*! 
-* Metoda odpowiedzialna za zwracanie środka     
-* \param[in]  - brak,                                              
-* Funkcja dostępowa do środka, zwraca środek bryły  
-*/
-Vector3D Peak::getbmid() const{
-return bmid;
-}
 

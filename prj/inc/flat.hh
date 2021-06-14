@@ -10,32 +10,28 @@
 
 
 #include "solid.hh"
-//#include "obstacles.hh"
+
 
 /*!
  * Flat dziedziczy po klasie Solid
+ * zawiera dodatkowe pola: środek podstawy i typ.
  */
 class Flat: public Solid {
 
 protected:
-Vector3D bmid;
+
 std::string type="Płaskowyż";
    
 public:
 
 /*! 
-* Konstruktor parametryczny klasy Cuboid
+* Konstruktor parametryczny klasy Flat
 */
-Flat(Vector3D mid=Vector3D(), double x=100, double y=100, double z=20, std::string name="../datasets/flat.dat");           
+Flat(Vector3D mid=Vector3D(), double x=100, double y=100, double z=20, std::string name="../datasets/flat.dat");  
+
 /*! 
-* Destruktor bezparametryczny klasy Cuboid
+* Metoda dostępowa, zwraca typ obiektu
 */
-//~Cuboid() {free (dimen);};
-
-void setbmid (Vector3D bmid);
-
-Vector3D getbmid() const;
-
 std::string gettype() {return type;}
 
 };

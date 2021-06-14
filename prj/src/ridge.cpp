@@ -1,16 +1,31 @@
+/*!
+ * \file
+ * \brief plik źródłowy
+ * 
+ * Plik zawiera wszystkie metody klasy Ridge
+ */
+
 #include "ridge.hh"
 
-
+/*! 
+* Konstruktor parametryczny klasy Ridge.      
+* \param[in]  - mid -środek bryły, 
+* \param[in]  - x -wspólrzędna po osi x, 
+* \param[in]  - y -wspólrzędna po osi y,
+* \param[in]  - z -wspólrzędna po osi z,
+* \param[in]  - name -nazwa,
+* wpisuje do kontenera wszystkie wierzchołki góry z granią
+*/
 Ridge::Ridge(Vector3D mid, double x, double y, double z, std::string name) { 
 
     double tab[]={x,y,z};
-    double tab2[]={0,0,z/2};
+    
     double tab3[]={x/2,0,0};
     dimen=Vector3D(tab);
-    Vector3D mov(tab2);
+    
     Vector3D mov2(tab3);
     this->name=name;
-    this->bmid=mid-mov;
+    
     Vector3D vertex;
 
     vertex[0]=mid[0]+(x/2);
@@ -56,20 +71,4 @@ Ridge::Ridge(Vector3D mid, double x, double y, double z, std::string name) {
     this->mid=mid+mov2;
 }
 
-/*! 
-* Metoda odpowiedzialna za ustawianie środka     
-* \param[in]  - mid -srodek,                                              
-* Przypisuje odpowiedniej zmiennej z klasy, srodek podany w argumencie 
-*/
-void Ridge::setbmid (Vector3D bmid){
-this->bmid=bmid;
-}
 
-/*! 
-* Metoda odpowiedzialna za zwracanie środka     
-* \param[in]  - brak,                                              
-* Funkcja dostępowa do środka, zwraca środek bryły  
-*/
-Vector3D Ridge::getbmid() const{
-return bmid;
-}

@@ -1,12 +1,21 @@
+/*!
+ * \file
+ * \brief plik źródłowy
+ * 
+ * Plik zawiera wszystkie metody klasy Obstacles
+ */
+
 #include "obstacles.hh"
 
 /*! 
-* Konstruktor parametryczny klasy Drone. 
-* \param[in]  - id -numer drona,   
+* Konstruktor parametryczny klasy Obstacles. 
+* \param[in]  - nr - numer wybrany przez użytkownika,   
+* \param[in]  - next - numer porządkowy przeszkody danego typu,
 * \param[in]  - Lacze -łącze do gnoplota,  
+* \param[in]  - dimensions -wektor wymiarów przeszkody, 
 * \param[in]  - position -wektor określający położenie drona, 
-* Ustawia zakresy rysowania, tworzy płaszczyznę,
-* losuje pozycje dla dronów i je roztawia  
+* w zależności od wybranego numeru tworzy odpowiednią przeszkodę, podaje ją do gnuplota
+* i zapisuje 
 */
 Obstacles::Obstacles(int nr, int next,PzG::LaczeDoGNUPlota  &Lacze,Vector3D dimensions, Vector3D position):Lacze(Lacze){
 double x=dimensions[0]; double y=dimensions[1]; double z=dimensions[2];
@@ -16,42 +25,39 @@ if (nr==1) {
   Ridge rid(position,x,y,z,name);
 rid.setname("../datasets/rmountain"+std::to_string(nr)+std::to_string(next)+".dat");
 Lacze.DodajNazwePliku(rid.getname().c_str(), PzG::RR_Ciagly, 2);
-//rid.move(position);
+
 this->rid2=rid;
 rid.save();
-//this->nextr++;
+
 }
 else if(nr==2) {
-  //flatmount.setname("../datasets/fmountain"+std::to_string(nr)+".dat");
-//Lacze.DodajNazwePliku(flatmount.getname().c_str(), PzG::RR_Ciagly, 2);
-//flatmount.move(position);
 Flat fla(position,x,y,z,name);
 fla.setname("../datasets/fmountain"+std::to_string(nr)+std::to_string(next)+".dat");
 Lacze.DodajNazwePliku(fla.getname().c_str(), PzG::RR_Ciagly, 2);
-//fla.move(position);
+
 this->fla2=fla;
 fla.save();
-//this->nextf++;
+
 }
 else if(nr==3) {
-  //std::cout<<nextp<<std::endl;
+  
 Peak pea(position,x,y,z,name);
 pea.setname("../datasets/pmountain"+std::to_string(nr)+std::to_string(next)+".dat");
 Lacze.DodajNazwePliku(pea.getname().c_str(), PzG::RR_Ciagly, 2);
-//pea.move(position);
+
 this->pea2=pea;
 pea.save();
-//makepeak(nr,Lacze,position,x,y,z,name);
-//nextp1();
-//nextp=nextp+1;
-//std::cout<<nextp<<std::endl;
+
 }
 else{std::cout<<"_______________"<<std::endl;}
 
-//nextp++;
-//std::cout<<nextp<<std::endl;
 }
 
+/*! 
+* Metoda odpowiedzialna za zwracanie środka odpowiedniej bryly    
+* \param[in]  - brak,                                              
+* Funkcja dostępowa do środka, zwraca środek wybranej bryły  
+*/
 Vector3D Obstacles::getmid() {
 if (this->nr==1) {
   
@@ -70,7 +76,11 @@ else {
   Vector3D b; return b;}
 }
 
-
+/*! 
+* Metoda odpowiedzialna za zwracanie typu    
+* \param[in]  - brak,                                              
+* Funkcja dostępowa do typu, zwraca typ  wybranej bryły  
+*/
 std::string Obstacles::gettype() {
   if (this->nr==1) {
   
@@ -87,7 +97,11 @@ else if (this->nr==3) {
 else {std::string b="nie ma takiej figury?"; return b;}
 }
 
-
+/*! 
+* Metoda odpowiedzialna za zwracanie nazwy     
+* \param[in]  - brak,                                              
+* Funkcja dostępowa do nazwy, zwraca nazwę wybranej bryły  
+*/
 std::string Obstacles::getname() {
   if (this->nr==1) {
   
@@ -104,30 +118,4 @@ else if (this->nr==3) {
 else {std::string b="nie ma takiej figury?"; return b;}
 }
 
-/*! 
-* Metoda odpowiedzialna za zapis wierzchołków    
-* \param[in]  - brak, 
-* Zapisuje współrzędne wierzchołków do pliku 
-*/
-//void Obstacles::save()
-//{
-//  if (this->nr==1) 
-    //rid.save();
-//    ;
 
-//  else if(this->nr==2)
-  //flatmount.save();
- // ;
-     /* std::fstream file;
-
-    file.open(name, std::ios::out);
- for (int i = 0; i < (int)vert.size(); i++)
- {
-   if(i%counter==0) {
-   file<<std::endl;
-   }
-   file<<vert[i]<<std::endl;
- }
-   
-    file.close();*/
-//}

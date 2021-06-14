@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Plik źródłowy vector.cpp</title>
+<title>Dragonfly faza2: Plik źródłowy vector.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Dragonfly faza2
+   &#160;<span id="projectnumber">2.0</span>
    </div>
   </td>
  </tr>
@@ -69,7 +69,7 @@ $(document).ready(function(){initNavTree('vector_8cpp_source.html',''); initResi
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector_8hh.html">vector.hh</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Tests that don&#39;t naturally fit in the headers/.cpp files directly</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// can be placed in a tests/*.cpp file. Integration tests are a good example.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// can be placed in a tests/*.cpp file. Integration tests are a good example. </span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="vector_8cpp.html#abc87481328542dff0e3f8a55c842b44c">    9</a></span>&#160;<a class="code" href="vector_8cpp.html#abc87481328542dff0e3f8a55c842b44c">TEST_CASE</a>(<span class="stringliteral">&quot;konstruktor bezparametryczny&quot;</span>)</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
@@ -225,18 +225,6 @@ $(document).ready(function(){initNavTree('vector_8cpp_source.html',''); initResi
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="vector_8cpp.html#a31c3fabb75926506178450125b0733a6">  163</a></span>&#160;<a class="code" href="vector_8cpp.html#abc87481328542dff0e3f8a55c842b44c">TEST_CASE</a>(<span class="stringliteral">&quot;metoda vecamount&quot;</span>)</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordtype">double</span> args[3]={1,2,3};</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <a class="code" href="class_vector.html">Vector&lt;double,3&gt;</a> v(args);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <a class="code" href="class_vector.html">Vector&lt;double,3&gt;</a> w;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  std::ostringstream out;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  w.<a class="code" href="class_vector.html#ae426913a0fe53bf13425ca8c9fa1d62e">vecamount</a>(out);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <a class="code" href="doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a>(out.str() == <span class="stringliteral">&quot;ilość aktualnych wektorów: 2\nilość wszystkich wektorów: 10\n&quot;</span>);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="avector_8hh_html"><div class="ttname"><a href="vector_8hh.html">vector.hh</a></div><div class="ttdoc">Definicja klasy Vector.</div></div>
@@ -245,7 +233,6 @@ $(document).ready(function(){initNavTree('vector_8cpp_source.html',''); initResi
 <div class="ttc" id="aapp_2main_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="app_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="app_2main_8cpp_source.html#l00027">app/main.cpp:27</a></div></div>
 <div class="ttc" id="avector_8cpp_html_abc87481328542dff0e3f8a55c842b44c"><div class="ttname"><a href="vector_8cpp.html#abc87481328542dff0e3f8a55c842b44c">TEST_CASE</a></div><div class="ttdeci">TEST_CASE(&quot;konstruktor bezparametryczny&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00009">vector.cpp:9</a></div></div>
 <div class="ttc" id="adoctest_8h_html_a836cca6b6ed3a1706353f6d1bca0935f"><div class="ttname"><a href="doctest_8h.html#a836cca6b6ed3a1706353f6d1bca0935f">CHECK</a></div><div class="ttdeci">#define CHECK(...)</div><div class="ttdef"><b>Definition:</b> <a href="doctest_8h_source.html#l02528">doctest.h:2528</a></div></div>
-<div class="ttc" id="aclass_vector_html_ae426913a0fe53bf13425ca8c9fa1d62e"><div class="ttname"><a href="class_vector.html#ae426913a0fe53bf13425ca8c9fa1d62e">Vector::vecamount</a></div><div class="ttdeci">void vecamount(std::ostream &amp;strmo)</div><div class="ttdef"><b>Definition:</b> <a href="vector_8hh_source.html#l00098">vector.hh:98</a></div></div>
 <div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector&lt; double, 3 &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

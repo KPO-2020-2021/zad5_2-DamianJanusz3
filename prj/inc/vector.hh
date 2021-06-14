@@ -89,7 +89,7 @@ Vector &operator= (const Vector &vec);
  */
 constexpr Vector(const Vector &vec);
 
-//Vector &operator= (const Vector<type,size1-1> &vec);
+
 
 };
 
@@ -139,29 +139,6 @@ constexpr Vector<type,size1>::Vector(const Vector<type,size1> &vec){
             size[i] = vec.size[i];
         current++; 
 }
-
-
-
-
-
-
-/*! 
-* Operator przypisania.         
-* \param[in]  - vec - wektor2d 
-* Przypisuje wartosci z wektora podanego w argumencie      
-*/
-/*template <typename type, int size1>
-Vector<type,size1> &Vector<type,size1>::operator= (const Vector<type,size1-1> &vec){
-
-        size[0] = vec.size[0];
-        size[1] = vec.size[1];
-    return *this;
-}*/
-
-
-
-
-
 
 
 

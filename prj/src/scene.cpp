@@ -114,7 +114,7 @@ std::cout<<"k - koniec dzialania programu"<<std::endl<<std::endl;
         
 
         if (r==0) {it=DLst.begin(); it->get()->manipulate();}
-        else if (r==1) {  (++it)->get()->manipulate(); it=DLst.begin();}
+        else if (r==1) { it=DLst.begin(); (++it)->get()->manipulate(); it=DLst.begin();}
         else {std::cerr<<"brak drona o podanym numerze."<<std::endl; r=0;}
         
         break;

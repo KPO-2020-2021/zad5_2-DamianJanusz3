@@ -7,6 +7,8 @@ Prism nie mają strikte swoich testów bo zawierają w sobie tylko konstruktor d
 Stwierdzenia z fazy 1 pozostają w mocy. W fazie 2 dodany został tylko jeden test dla metody gettype().
 ## informacje ogólne
 Nie za dobrze z asercjami, ale w ramach poprawnego wykożystywania wszystko działa.
+Nie do końca wiem czy dobrze zrobiłem doxygena, ale stronę html odpalałem wchodząc do dox->html i klikałem losowy plik 
+z końcówką .html. strona się odpala wszystko tam jest. 
 ## Building
 
 Build by making a build directory (i.e. `build/`), run `cmake` in that dir, and then use `make` to build the desired target.

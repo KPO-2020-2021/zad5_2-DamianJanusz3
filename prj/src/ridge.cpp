@@ -6,17 +6,19 @@
  */
 
 #include "ridge.hh"
+#include <algorithm>
 
 /*! 
 * Konstruktor parametryczny klasy Ridge.      
 * \param[in]  - mid -środek bryły, 
-* \param[in]  - x -wspólrzędna po osi x, 
-* \param[in]  - y -wspólrzędna po osi y,
-* \param[in]  - z -wspólrzędna po osi z,
-* \param[in]  - name -nazwa,
-* wpisuje do kontenera wszystkie wierzchołki góry z granią
+* \param[in]  - nr - numer bryły
+* \param[in]  - Lacze - łącze do gnuplota 
+* \param[in]  - dimen - wektor wymiarów
+* wpisuje do kontenera wszystkie wierzchołki góry z granią, dodaje nazwę pliku do gnuplota, ustawia typ i promień obrysu
 */
-Ridge::Ridge(Vector3D mid, double x, double y, double z, std::string name) { 
+Ridge::Ridge(PzG::LaczeDoGNUPlota  &Lacze, int nr,Vector3D mid,Vector3D dimenn):Obstacles(Lacze) { 
+double x=dimenn[0], y=dimenn[1], z=dimenn[2];
+
 
     double tab[]={x,y,z};
     
@@ -24,8 +26,8 @@ Ridge::Ridge(Vector3D mid, double x, double y, double z, std::string name) {
     dimen=Vector3D(tab);
     
     Vector3D mov2(tab3);
-    this->name=name;
-    
+    this->name="../datasets/rmountain"+std::to_string(nr)+".dat";
+    this->type="Góra z granią";
     Vector3D vertex;
 
     vertex[0]=mid[0]+(x/2);
@@ -69,6 +71,10 @@ Ridge::Ridge(Vector3D mid, double x, double y, double z, std::string name) {
    vert.push_back(vertex);
 
     this->mid=mid+mov2;
+
+    Lacze.DodajNazwePliku(this->getname().c_str(), PzG::RR_Ciagly, 2);
+    this->save();
 }
 
 
+ 

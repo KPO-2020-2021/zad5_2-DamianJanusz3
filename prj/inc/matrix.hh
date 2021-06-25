@@ -330,4 +330,3 @@ void Matrix<type1, size2>::clear() {
         }
     }
 }
-

@@ -10,17 +10,14 @@
 
 
 #include "solid.hh"
-
+#include "obstacles.hh"
 
 /*!
- * Peak dziedziczy po klasie Solid
- * zawiera dodatkowe pola: środek podstawy i typ.
+ * Peak dziedziczy po klasie Solid i Obstacles
+ * zawiera tylko zmienne z klas rodziców
  */
-class Peak: public Solid {
+class Peak: public Solid, public Obstacles {
 
-protected:
-
-std::string type="Góra ze szczytem";
 
    
 public:
@@ -28,12 +25,20 @@ public:
 /*! 
 * Konstruktor parametryczny klasy Peak 
 */
-Peak(Vector3D mid=Vector3D(), double x=100, double y=100, double z=20, std::string name="../datasets/peak.dat");           
+Peak(PzG::LaczeDoGNUPlota  &Lacze ,int nr,Vector3D mid=Vector3D(),Vector3D dimenn=Vector3D());           
 
 
 /*! 
 * Metoda dostępowa, zwraca typ obiektu
 */
-std::string gettype() {return type;}
+virtual std::string gettype() override {return type;}
+/*! 
+* Metoda dostępowa, zwraca środek obiektu
+*/
+virtual Vector3D getmid()  override {return mid;};
+/*! 
+* Metoda dostępowa, zwraca nazwę obiektu
+*/
+virtual std::string getname() override {return name;}
 
 };

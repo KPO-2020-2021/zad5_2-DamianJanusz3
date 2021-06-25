@@ -11,6 +11,7 @@
 
 
 
+
  /*! 
 * Operator indeksowania klasy Solid. 
 * \param[in]  - index -indeks,                
@@ -50,23 +51,7 @@ void Solid::setname (std::string name){
 this->name=name;
 }
 
-/*! 
-* Metoda odpowiedzialna za zwracanie środka     
-* \param[in]  - brak,                                              
-* Funkcja dostępowa do środka, zwraca środek bryły  
-*/
-Vector3D Solid::getmid() const{
-return mid;
-}
 
-/*! 
-* Metoda odpowiedzialna za zwracanie nazwy     
-* \param[in]  - brak,                                              
-* Funkcja dostępowa do nazwy, zwraca nazwę  
-*/
-std::string Solid::getname () const{
-return name;
-}
 
 /*! 
 * Metoda odpowiedzialna za przesuwanie bryły    
@@ -79,6 +64,8 @@ for (int i=0; i<(int)vert.size(); ++i) {
     vert[i]=vert[i]+mov;
 }
 mid=mid+mov;
+
+
 }
 
 /*! 
@@ -92,6 +79,8 @@ for (int i=0; i<(int)vert.size(); ++i) {
     vert[i]=(rot*vert[i]);
 }
 mid=rot*mid;
+
+
 }
 
 /*! 
@@ -122,3 +111,8 @@ mid=rot*mid;
      file << mid-movemid <<std::endl <<std::endl;
      file.close();
  }
+
+
+
+
+ 

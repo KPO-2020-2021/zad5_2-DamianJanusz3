@@ -10,28 +10,35 @@
 
 
 #include "solid.hh"
+#include "obstacles.hh"
 
 /*!
- * Ridge dziedziczy po klasie Solid
- * zawiera dodatkowe pola: środek podstawy i typ.
+ * Ridge dziedziczy po klasie Solid i Obstacles
+ * zawiera tylko zmienne z klas rodziców
  */
-class Ridge: public Solid{
+class Ridge: public Solid, public Obstacles{
 
-protected:
-
-std::string type="Góra z granią";
 
    
 public:
 
 /*! 
-* Konstruktor parametryczny klasy Ridge
+* Konstruktor parametryczny klasy Ridge 
 */
-Ridge(Vector3D mid=Vector3D(), double x=100, double y=100, double z=100, std::string name="../datasets/ridge.dat");  
+Ridge(PzG::LaczeDoGNUPlota  &Lacze ,int nr,Vector3D mid=Vector3D(),Vector3D dimenn=Vector3D());  
 
 /*! 
 * Metoda dostępowa, zwraca typ obiektu
 */
-std::string gettype() {return type;}
+virtual std::string gettype() override {return type;}
+/*! 
+* Metoda dostępowa, zwraca środek obiektu
+*/
+virtual Vector3D getmid()  override {return mid;}
+/*! 
+* Metoda dostępowa, zwraca nazwę obiektu
+*/
+virtual std::string getname() override {return name;}
+
 
 };

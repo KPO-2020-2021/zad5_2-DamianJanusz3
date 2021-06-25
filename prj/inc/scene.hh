@@ -15,26 +15,28 @@
 #include <memory>
 #include <list>
 
-#include "obstacles.hh"
+
+#include "ridge.hh"
+#include "flat.hh"
+#include "peak.hh"
 #include "example.h"
 #include "lacze_do_gnuplota.hh"
-#include "prism.hh"
 #include "drone.hh"
 #include "surface.hh"
 
 #define NR 2
 
 /*!
- * Scene zawiera łącze do gnuplota, listę dronów, listę przeszkód, ich iteratory, płaszczyznę.
+ * Scene zawiera liczniki poszczególnych przeszkód, łącze do gnuplota, listę dronów, listę przeszkód, ich iteratory, płaszczyznę. 
  */
 class Scene {
-
+int ridgeamount=0, flatamount=0, peakamount=0;
 PzG::LaczeDoGNUPlota Lacze;
 std::list<std::shared_ptr<Drone>> DLst;
 std::list<std::shared_ptr<Drone>>::iterator it = DLst.begin();
 Surface *ground;
-std::list<std::shared_ptr<Obstacles>> Lst;
-std::list<std::shared_ptr<Obstacles>>::iterator iter = Lst.begin();
+std::list<std::shared_ptr<Solid>> Lst;
+std::list<std::shared_ptr<Solid>>::iterator iter = Lst.begin();
 
 
 public:
@@ -58,4 +60,10 @@ void interface();
 * Metoda odpowiedzialna za usunięcie nazwy pliku z łącza 
 */
 void deletename ( PzG::LaczeDoGNUPlota  &Lacze);
+
+/*! 
+* Metoda odpowiedzialna za manipulację dronem
+*/
+void manipulate1(Drone *tmp);
+
 };

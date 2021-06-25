@@ -6,25 +6,25 @@
  * 
  * Plik zawiera definicję klasy Drone
  */
-
+#include "obstacles.hh"
 #include "cuboid.hh"
 #include "matrix3x3.hh"
 #include "prism.hh"
 #include <unistd.h>
-#include "../inc/lacze_do_gnuplota.hh"
+#include "vector3D.hh"
+
 
 
 /*!
- * Drone zawiera: kąt, id, odległość do przebycia, macierz rotacji
- * oryginalne rotory, ich kopie, oryginalny kadłub, jego kopię,
- *łącze do gnu plota i rysowaną scieżkę. 
+ * Drone zawiera: kąt, id, odległość do przebycia, macierz rotacji 
+ * oryginalne rotory, ich kopie, oryginalny kadłub, jego kopię, kąt dla ścieżki
+ * i rysowaną scieżkę. 
  */
-class Drone {
-
+class Drone: public Solid, public Obstacles {
+public:
     int id;
     double angle;
     std::vector <Vector3D> pathr;
-    PzG::LaczeDoGNUPlota  &Lacze;
     Cuboid org;
     Cuboid cpy;
     Prism orgw[4];
@@ -32,21 +32,20 @@ class Drone {
     Matrix3x3 rot;
     Vector3D path;
     
-
-    public:
+    
 
 /*! 
-* Konstruktor parametryczny klasy Surface
+* Konstruktor bezparametryczny klasy Drone
+*/  
+    Drone();
+/*! 
+* Konstruktor parametryczny klasy Drone
 */
     Drone(int id,PzG::LaczeDoGNUPlota  &Lacze, Vector3D position);
 /*! 
 * Metoda odpowiedzialna za zapis 
 */
     void save();
-/*! 
-* Metoda odpowiedzialna za sterowanie dronem
-*/
-    void manipulate();
 /*! 
 * Metoda odpowiedzialna za przesunięcie drona
 */
@@ -67,5 +66,19 @@ class Drone {
 * Metoda odpowiedzialna za wyznaczenie ścieżki drona
 */
     void calculatepath(double path, double angle1);
+/*! 
+* Metoda dostępowa, zwraca typ obiektu
+*/
+    virtual std::string gettype() override {return type;}
+
+/*! 
+* Metoda dostępowa, zwraca środek obiektu
+*/
+    virtual Vector3D getmid() override {return mid;}
+/*! 
+* Metoda dostępowa, zwraca nazwę obiektu
+*/
+    virtual std::string getname() override {return name;}
+
 
 };

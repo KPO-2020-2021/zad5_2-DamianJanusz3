@@ -11,12 +11,13 @@
 * \param[in]  - id -numer drona,   
 * \param[in]  - Lacze -łącze do gnoplota,  
 * \param[in]  - position -wektor określający położenie drona,             
-* Ustawia nazwy plików, dodaje je do gnuplota  
+* Ustawia nazwy plików, dodaje je do gnuplota, ustawia promień obrysu i typ 
 */
-Drone::Drone(int id,PzG::LaczeDoGNUPlota  &Lacze,Vector3D position):Lacze(Lacze){
+Drone::Drone(int id,PzG::LaczeDoGNUPlota  &Lacze,Vector3D position):Obstacles(Lacze){ 
 
 angle=0;
 this->id=id;
+
 org.setname("../datasets/body"+std::to_string(id)+".dat");
 
  for (int i = 0; i < 4; ++i)
@@ -28,6 +29,7 @@ Lacze.DodajNazwePliku(orgw[j].getname().c_str(),PzG::RR_Ciagly,2);
 cpy=org;
 
 cpy.move(position);
+
 for (int k=0; k<4; ++k) {
     cpyw[k]=orgw[k];
 }
@@ -35,7 +37,9 @@ for (int l = 0; l < 4; l++) {
         cpyw[l].move(org[l*2] + position);
 }
     this->path = this->path + position;
-
+    this->mid =position;
+this->type="Dron";
+this->save();
 }
 
 /*! 
@@ -70,7 +74,7 @@ void Drone::move(double path) {
 
 /*! 
 * Metoda odpowiedzialna za rotację drona. 
-* \param[in]  - angle -kąt obrotu,                
+* \param[in]  - angle -kąt obrotu,
 * Obraca dronem o zadany kąt  
 */
 void Drone::rotate(double angle) {
@@ -89,7 +93,7 @@ void Drone::rotate(double angle) {
 * Obraca rotorami wokół ich środka i przesuwa 
 * te rotory na swoje miejsca
 */
-void Drone::rotatew(/*double angle*/) {
+void Drone::rotatew() {
 
     static int angle1=0;
     static int angle2=0;
@@ -139,87 +143,6 @@ void Drone::save() {
         
 }
 
-/*! 
-* Metoda odpowiedzialna za manipulację. 
-* \param[in]  - brak,                
-* Wykonuje wszystkie akcje dronami.
-*/
-void Drone::manipulate () {
-
-    double path;
-    double angle;
-    
-        
-    save();
-    std::cout<<"Podaj kierunek lotu (kat w stopniach)>";
-    std::cin>> angle;
-    std::cout<<"Podaj dlugosc lotu>";
-    std::cin >> path;
-    calculatepath(path,angle);
-    Lacze.DodajNazwePliku("../datasets/path.dat", PzG::RR_Ciagly, 2);
-    for (int i=0; i<100; ++i){
-            cpy=org;
-            for (int j = 0; j < 4; j++)
-            cpyw[j]=orgw[j];
-
-            verticalmove(1);
-            rotatew();
-            save();
-            Lacze.Rysuj();
-            usleep(20000);
-        }
-      if(angle>0){
-        for (int i=0; i<angle; ++i){
-            cpy=org;
-            for (int j = 0; j < 4; j++)
-                cpyw[j] = orgw[j];
-            rotate(1);
-            rotatew();
-            save();
-            Lacze.Rysuj();
-            usleep(20000);
-        }
-        }
-        else {
-            for (int k=0; k>angle; --k){
-            cpy=org;
-            for (int j = 0; j < 4; j++)
-                cpyw[j] = orgw[j];
-            rotate(-1);
-            rotatew();
-            save();
-            Lacze.Rysuj();
-            usleep(20000);
-        }
-        }
-    
-    for (int k = 0; k < path; k++)
-        {
-        cpy = org;
-        for (int l = 0; l < 4; l++)
-            cpyw[l] = orgw[l];
-        move(1);
-        rotatew();
-        save();
-        Lacze.Rysuj();
-        usleep(20000);
-        }
-
-        for (int o = 0; o < 100; o++)
-        {
-        cpy = org;
-        for (int p = 0; p < 4; p++)
-           cpyw[p] = orgw[p];
-        verticalmove(-1);
-        rotatew();
-        save();
-        Lacze.Rysuj();
-        usleep(20000);
-        }
-        Lacze.UsunOstatniaNazwe();
-
-
-}
 
 /*! 
 * Metoda odpowiedzialna za wyznaczenie trasy. 
@@ -228,6 +151,8 @@ void Drone::manipulate () {
 * i zapisuje ją do pliku
 */
 void Drone::calculatepath(double path, double angle1) {
+
+
 
     Vector3D next = cpy.getmid();
     next[2] = 0;
@@ -251,3 +176,4 @@ void Drone::calculatepath(double path, double angle1) {
     file.close();
 
     }
+

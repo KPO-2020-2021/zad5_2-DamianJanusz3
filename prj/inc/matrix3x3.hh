@@ -11,4 +11,3 @@
 
 typedef Matrix<double,3>  Matrix3x3;
 
-

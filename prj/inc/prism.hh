@@ -13,6 +13,7 @@
  * Prism dziedziczy po Solid
  */
 class Prism: public Solid {
+   
     public:
 /*! 
 * Konstruktor parametryczny klasy Prism

@@ -22,7 +22,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "Dragonfly faza2", "index.html", [
+  [ "My Project", "index.html", [
     [ "Dragonfly faza 2", "index.html", [
       [ "Najważniejsze cechy", "index.html#wazne-cechy", null ]
     ] ],
@@ -76,15 +76,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_8__doctest_8cpp.html",
-"classdoctest_1_1_approx.html#a12a93e1726180db4091cb2e3b8ba5e30",
-"doctest_8h.html#a0da07f59e77fcb14943788b2c85e2355",
-"doctest_8h.html#a8d2841093b4bbdb7efd276e1a35a784a",
+"classdoctest_1_1_approx.html",
+"doctest_8h.html#a0d30b4e4f2a0e5b7e845efe285bf270f",
+"doctest_8h.html#a8d05cc6960a068bd84bc215d98112973",
 "doctest_8h.html#ae1bb5bed722f34f1c38b83cb19d326d3aed02321201b6add80ba71104a3351cdc",
-"doctest__fwd_8h.html#a49fd020eb5d05b1e021d84558ef297a5",
-"doctest__fwd_8h.html#add92617980cc95f31f1f00d8ec264073",
-"functions_e.html",
-"structdoctest_1_1_context_options.html#a9f26ee60a5259e73f9f25ce3f4883a97",
-"vector_8cpp.html#a2d55b6ae31c8200ea176bb0978609df8"
+"doctest__fwd_8h.html#a4848f1d467fb5ef1dae4f31d56b8760a",
+"doctest__fwd_8h.html#add8ee38907c3536a7c422f79260311fd",
+"functions_d.html",
+"structdoctest_1_1_context_options.html#a9d542a95ee03f61c233fff51e7461400",
+"vector_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

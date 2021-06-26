@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"functions_d.html":[6,3,0,4],
 "functions_e.html":[6,3,0,5],
 "functions_f.html":[6,3,0,6],
 "functions_func.html":[6,3,1],
@@ -49,8 +50,8 @@ var NAVTREEINDEX7 =
 "functions_y.html":[6,3,0,23],
 "functions_z.html":[6,3,0,24],
 "functions_~.html":[6,3,0,25],
-"globals.html":[7,1,0],
 "globals.html":[7,1,0,0],
+"globals.html":[7,1,0],
 "globals_c.html":[7,1,0,1],
 "globals_d.html":[7,1,0,2],
 "globals_defs.html":[7,1,4],
@@ -89,8 +90,8 @@ var NAVTREEINDEX7 =
 "globals_w.html":[7,1,0,18],
 "globals_x.html":[7,1,0,19],
 "hierarchy.html":[6,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#wazne-cechy":[0,0],
 "lacze__do__gnuplota_8cpp.html":[7,0,25],
 "lacze__do__gnuplota_8cpp.html#a2b501945c8d86114fcf6420cc1ee6306":[7,0,25,0],
@@ -147,15 +148,15 @@ var NAVTREEINDEX7 =
 "namespacedoctest_1_1_color.html":[5,0,0,1],
 "namespacedoctest_1_1_test_case_failure_reason.html":[5,0,0,3],
 "namespacedoctest_1_1assert_type.html":[5,0,0,0],
-"namespacedoctest_1_1detail.html":[6,0,0,0],
 "namespacedoctest_1_1detail.html":[5,0,0,2],
+"namespacedoctest_1_1detail.html":[6,0,0,0],
 "namespacedoctest_1_1detail_1_1assert_action.html":[5,0,0,2,0],
 "namespacedoctest_1_1detail_1_1binary_assert_comparison.html":[5,0,0,2,1],
 "namespacedoctest_1_1detail_1_1has__insertion__operator__impl.html":[6,0,0,0,0],
 "namespacedoctest_1_1detail_1_1has__insertion__operator__impl.html":[5,0,0,2,2],
 "namespacedoctest__detail__test__suite__ns.html":[5,0,1],
-"namespacemembers.html":[5,1,0,0],
 "namespacemembers.html":[5,1,0],
+"namespacemembers.html":[5,1,0,0],
 "namespacemembers_b.html":[5,1,0,1],
 "namespacemembers_c.html":[5,1,0,2],
 "namespacemembers_d.html":[5,1,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "structdoctest_1_1_context_options.html#a880207c3b4cc98fc5c8d94998841e837":[6,0,0,4,21],
 "structdoctest_1_1_context_options.html#a8ba5bfec2229bc2da9ab917f4bdee5e7":[6,0,0,4,0],
 "structdoctest_1_1_context_options.html#a8cd276e86a209f3d5486eb6c5a2a29bf":[6,0,0,4,10],
-"structdoctest_1_1_context_options.html#a93281aa958eed5c2a1533d404b1ebeff":[6,0,0,4,32],
-"structdoctest_1_1_context_options.html#a9d542a95ee03f61c233fff51e7461400":[6,0,0,4,12]
+"structdoctest_1_1_context_options.html#a93281aa958eed5c2a1533d404b1ebeff":[6,0,0,4,32]
 };
